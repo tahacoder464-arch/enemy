@@ -12,13 +12,11 @@ func _ready():
 
 
 func _physics_process(delta):
-	# Si l'objet est en train de mourir, on arrête tout pour éviter l'erreur "null instance"
 	if hp <= 0:
 		queue_free()
 		return # On sort de la fonction immédiatement
 		
 	
-	# Correction des intervalles de PV
 	if hp < 70 and hp > 50:
 		animated_sprite_2d.play("damaged")
 	elif hp < 50 and hp > 0:
